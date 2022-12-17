@@ -1,3 +1,9 @@
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    document.getElementsByTagName('head')[0].innerHTML += '<link rel="stylesheet" href="mobile.css">'
+  } else {
+    document.getElementsByTagName('head')[0].innerHTML += '<link rel="stylesheet" href="style.css">'
+}
+
 const text = document.querySelector('.text')
 const onel = document.querySelector('.onel')
 const twol = document.querySelector('.twol')
@@ -560,7 +566,13 @@ function verny() {
     prav.textContent = "OK"
     console.log('ok', ver);
     ver = ver + 1
-    verl.textContent = 'правильных' + " " + ver 
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        verl.textContent = ver 
+      } else {
+        verl.textContent = 'правильных' + " " + ver 
+    }
+    
+
     if (otvetikl == "one") {
         onel.removeEventListener('click', verny)
         twol.removeEventListener('click', neverny)
@@ -592,8 +604,14 @@ function neverny() {
     
     never = never + 1
 
-    prav.textContent = 'правильным было' + " " + otvetik 
-    neverl.textContent = 'неправильных' + " " + never
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        prav.textContent = 'правильным было' + " " + otvetik 
+        neverl.textContent = never
+      } else {
+        prav.textContent = 'правильным было' + " " + otvetik 
+        neverl.textContent = 'неправильных' + " " + never
+    }
+
     if (otvetikl == "one") {
         onel.removeEventListener('click', verny)
         twol.removeEventListener('click', neverny)
