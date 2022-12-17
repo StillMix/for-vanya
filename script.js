@@ -6,6 +6,8 @@ const fourl = document.querySelector('.fourl')
 const verl = document.querySelector('.ver')
 const neverl = document.querySelector('.never')
 const prav = document.querySelector('.prav')
+const btn = document.querySelector('.start')
+const div =document.querySelector('.div')
 
 
 const initialCards = [
@@ -502,12 +504,15 @@ const initialCards = [
     },
 
 ];
+let otvetik
+let otvetikl
 let ver = 0
 let never = 0
 min = Math.ceil(1);
 max = Math.floor(10);
 function open() {
-
+    div.classList.remove('disabled')
+     btn.classList.add('disabled')
     const a = Math.floor(Math.random() * (max - min + 1)) + min;
     initialCards.map((i) => {
         if (i.id == a) {
@@ -516,29 +521,34 @@ function open() {
             twol.textContent = i.two;
             threel.textContent = i.three;
             fourl.textContent = i.four;
+            otvetikl= i.otvet
             if (i.otvet == "one") {
                 onel.addEventListener('click', verny)
-                twol.addEventListener('click', () => { neverny(i.one) })
-                threel.addEventListener('click', () => { neverny(i.one) })
-                fourl.addEventListener('click', () => { neverny(i.one) })
+                twol.addEventListener('click', neverny)
+                threel.addEventListener('click', neverny)
+                fourl.addEventListener('click', neverny)
+                otvetik = i.one
             }
             if (i.otvet == "two") {
-                onel.addEventListener('click', () => { neverny(i.two) })
+                onel.addEventListener('click', neverny)
                 twol.addEventListener('click', verny)
-                threel.addEventListener('click', () => { neverny(i.two) })
-                fourl.addEventListener('click', () => { neverny(i.two) })
+                threel.addEventListener('click', neverny)
+                fourl.addEventListener('click', neverny)
+                otvetik = i.two
             }
             if (i.otvet == "three") {
-                onel.addEventListener('click', () => { neverny(i.three) })
-                twol.addEventListener('click', () => { neverny(i.three) })
+                onel.addEventListener('click', neverny)
+                twol.addEventListener('click', neverny)
                 threel.addEventListener('click', verny)
-                fourl.addEventListener('click', () => { neverny(i.three) })
+                fourl.addEventListener('click', neverny)
+                otvetik = i.three
             }
             if (i.otvet == "four") {
-                onel.addEventListener('click', () => { neverny(i.four) })
-                twol.addEventListener('click', () => { neverny(i.four) })
-                threel.addEventListener('click', () => { neverny(i.four) })
+                onel.addEventListener('click', neverny)
+                twol.addEventListener('click', neverny)
+                threel.addEventListener('click',  neverny)
                 fourl.addEventListener('click', verny)
+                otvetik = i.four
             }
         }
         console.log(ver, never)
@@ -546,20 +556,71 @@ function open() {
 }
 
 function verny() {
+
     prav.textContent = "OK"
     console.log('ok', ver);
-    open()
     ver = ver + 1
-    verl.textContent = 'правильных' + " " + ver
-
+    verl.textContent = 'правильных' + " " + ver 
+    if (otvetikl == "one") {
+        onel.removeEventListener('click', verny)
+        twol.removeEventListener('click', neverny)
+        threel.removeEventListener('click', neverny)
+        fourl.removeEventListener('click', neverny)
+    }
+    if (otvetikl == "two") {
+        onel.removeEventListener('click', neverny)
+        twol.removeEventListener('click', verny)
+        threel.removeEventListener('click', neverny)
+        fourl.removeEventListener('click', neverny)
+    }
+    if (otvetikl == "three") {
+        onel.removeEventListener('click', neverny)
+        twol.removeEventListener('click', neverny)
+        threel.removeEventListener('click', verny)
+        fourl.removeEventListener('click', neverny)
+    }
+    if (otvetikl == "four") {
+        onel.removeEventListener('click', neverny)
+        twol.removeEventListener('click', neverny)
+        threel.removeEventListener('click',  neverny)
+        fourl.removeEventListener('click', verny)
+    }
+    setTimeout(open, 100)
 }
-function neverny(pravl) {
+function neverny() {
     console.log('no', never);
-    open()
+    
     never = never + 1
-    prav.textContent = 'правильным было' + " " + pravl
+
+    prav.textContent = 'правильным было' + " " + otvetik 
     neverl.textContent = 'неправильных' + " " + never
+    if (otvetikl == "one") {
+        onel.removeEventListener('click', verny)
+        twol.removeEventListener('click', neverny)
+        threel.removeEventListener('click', neverny)
+        fourl.removeEventListener('click', neverny)
+    }
+    if (otvetikl == "two") {
+        onel.removeEventListener('click', neverny)
+        twol.removeEventListener('click', verny)
+        threel.removeEventListener('click', neverny)
+        fourl.removeEventListener('click', neverny)
+    }
+    if (otvetikl == "three") {
+        onel.removeEventListener('click', neverny)
+        twol.removeEventListener('click', neverny)
+        threel.removeEventListener('click', verny)
+        fourl.removeEventListener('click', neverny)
+    }
+    if (otvetikl == "four") {
+        onel.removeEventListener('click', neverny)
+        twol.removeEventListener('click', neverny)
+        threel.removeEventListener('click',  neverny)
+        fourl.removeEventListener('click', verny)
+    }
+    setTimeout(open, 100)
 
 }
 
-open()
+btn.addEventListener('click', open)
+

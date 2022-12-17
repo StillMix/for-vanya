@@ -1,0 +1,94 @@
+.popup{
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+.disabled {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+ }
+
+.start{
+    cursor: pointer;
+    background: #000000;
+    border-radius: 2px;
+    width: 358px;
+    height: 50px;
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    display: block;
+    position: relative;
+left: 50%;
+transform: translate(-50%, 0);
+
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    -ms-user-select: none;
+            -moz-user-select: none;
+
+            /**
+             * Для конкверора
+             */
+            -khtml-user-select: none;
+
+            /**
+             * Для Сафари и Хрома
+             */
+            -webkit-user-select: none;
+}
+
+.start:hover {
+    opacity: 0.8;
+}
+
+
+.text{
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}
+
+.btn{
+    display: block;
+    cursor: pointer;
+    background: #542fd8;
+    border-radius: 2px;
+    width: 358px;
+    height: 50px;
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    outline: none;
+    border: none;
+    color: #FFFFFF;
+    -ms-user-select: none;
+            -moz-user-select: none;
+
+            /**
+             * Для конкверора
+             */
+            -khtml-user-select: none;
+
+            /**
+             * Для Сафари и Хрома
+             */
+            -webkit-user-select: none; 
+}
