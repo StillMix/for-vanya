@@ -93,3 +93,9 @@ transform: translate(-50%, 0);
             -webkit-user-select: none; 
 }
 
+.green{
+    background: green;
+}
+.red{
+    background:red;
+}
