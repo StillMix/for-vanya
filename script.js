@@ -17,9 +17,17 @@ let random = 0
         return numPool;
       };
       const addCartBtns = Array.from(document.querySelectorAll('.add-to-cart'))
+      let skokotv = 0
+      let a = shuffle(numPool);
+      let arr = []
 function open() {
+arr = []
+
+                console.log(skokotv)
+skokotv = 0
     document.querySelector('.button__container').innerHTML = ""
-    let a = shuffle(numPool);
+    
+    console.log(a)
     div.classList.remove('disabled')
      btn.classList.add('disabled')
 
@@ -206,22 +214,37 @@ const sixl = document.querySelector('.sixl')
     })
 }
 let skoko = 0;
-let arr = []
+
+
 function neskolko(e) {
-    let skokotv = 0
+    var cache
     e.target.classList.add('green')
     if(otvetikl == "one and five") {
         let arrotvet = [1, 5]
      arr.push(e.target.id)
-     
-     for(var i = 0; i<arrotvet; i++){
-        cache = arrotvet.innerHTML;
-        for(var j = 0; j<arr; j++){
-            if(cache == arr[j].innerHTML){
-                skokotv = skokotv + 1
-                console.log(skokotv)
+     for(var i = 0; i<arrotvet.length; i++){
+        cache = arrotvet[i]
+        for(var j = 0; j<arr.length; j++){
+                        if(cache == arr[j]){
+
+                               skokotv++
+
+
                 if(skokotv == 2){
-                    open()
+                    ver = ver + 1
+                    skoko = skoko + 1
+                    if(skoko == 33){
+                        onel.classList.add('disabled')
+                        twol.classList.add('disabled')
+                        threel.classList.add('disabled')
+                        fourl.classList.add('disabled')
+                        fivel.classList.add('disabled')
+                        sixl.classList.add('disabled')
+                    } else {
+
+                            open()
+
+                    }
                 }
             }
             
@@ -234,14 +257,29 @@ function neskolko(e) {
         arr.push(e.target.id)
        
         
-        for(var i = 0; i<arrotvet; i++){
-            cache = arrotvet.innerHTML;
-            for(var j = 0; j<arr; j++){
-                if(cache == arr[j].innerHTML){
-                    skokotv = skokotv + 1
+        for(var i = 0; i<arrotvet.length; i++){
+            cache = arrotvet[i]
+            for(var j = 0; j<arr.length; j++){
+                            if(cache == arr[j]){
+                
+                                   skokotv++
+               
                     console.log(skokotv)
                     if(skokotv == 2){
-                        open()
+                        ver = ver + 1
+                        skoko = skoko + 1
+                        if(skoko == 33){
+                            onel.classList.add('disabled')
+                            twol.classList.add('disabled')
+                            threel.classList.add('disabled')
+                            fourl.classList.add('disabled')
+                            fivel.classList.add('disabled')
+                            sixl.classList.add('disabled')
+                        } else {
+    
+                                open()
+    
+                        }
                     }
                 }
                 
@@ -254,15 +292,30 @@ function neskolko(e) {
         arr.push(e.target.id)
         
        
-             for(var i = 0; i<arrotvet; i++){
-        cache = arrotvet.innerHTML;
-        for(var j = 0; j<arr; j++){
-            if(cache == arr[j].innerHTML){
-                skokotv = skokotv + 1
+             for(var i = 0; i<arrotvet.length; i++){
+        cache = arrotvet[i]
+        for(var j = 0; j<arr.length; j++){
+                        if(cache == arr[j]){
+                
+                               skokotv++
+               
                 console.log(skokotv)
                 
                 if(skokotv == 2){
-                    open()
+                    ver = ver + 1
+                    skoko = skoko + 1
+                    if(skoko == 33){
+                        onel.classList.add('disabled')
+                        twol.classList.add('disabled')
+                        threel.classList.add('disabled')
+                        fourl.classList.add('disabled')
+                        fivel.classList.add('disabled')
+                        sixl.classList.add('disabled')
+                    } else {
+
+                            open()
+
+                    }
                 }
             }
         }
@@ -274,14 +327,29 @@ function neskolko(e) {
         arr.push(e.target.id)
        
         
-             for(var i = 0; i<arrotvet; i++){
-        cache = arrotvet.innerHTML;
-        for(var j = 0; j<arr; j++){
-            if(cache == arr[j].innerHTML){
-                skokotv = skokotv + 1
+             for(var i = 0; i<arrotvet.length; i++){
+        cache = arrotvet[i]
+        for(var j = 0; j<arr.length; j++){
+                        if(cache == arr[j]){
+                
+                               skokotv++
+               
                 console.log(skokotv)
                 if(skokotv == 2){
-                    open()
+                    ver = ver + 1
+                    skoko = skoko + 1
+                    if(skoko == 33){
+                        onel.classList.add('disabled')
+                        twol.classList.add('disabled')
+                        threel.classList.add('disabled')
+                        fourl.classList.add('disabled')
+                        fivel.classList.add('disabled')
+                        sixl.classList.add('disabled')
+                    } else {
+
+                            open()
+
+                    }
                 }
             }
 
@@ -294,33 +362,65 @@ function neskolko(e) {
         arr.push(e.target.id)
         
        
-             for(var i = 0; i<arrotvet; i++){
-        cache = arrotvet.innerHTML;
-        for(var j = 0; j<arr; j++){
-            if(cache == arr[j].innerHTML){
-                skokotv = skokotv + 1
+             for(var i = 0; i<arrotvet.length; i++){
+        cache = arrotvet[i]
+        for(var j = 0; j<arr.length; j++){
+                        if(cache == arr[j]){
+                
+                               skokotv++
+               
                 console.log(skokotv)
                 if(skokotv == 2){
-                    open()
+                    ver = ver + 1
+                    skoko = skoko + 1
+                    if(skoko == 33){
+                        onel.classList.add('disabled')
+                        twol.classList.add('disabled')
+                        threel.classList.add('disabled')
+                        fourl.classList.add('disabled')
+                        fivel.classList.add('disabled')
+                        sixl.classList.add('disabled')
+                    } else {
+
+                            open()
+
+                    }
                 }
             }
             
          }
 
     }
+}
     if(otvetikl == "one and two and three") {
         let arrotvet = [1, 2, 3]
         arr.push(e.target.id)
         
        
-             for(var i = 0; i<arrotvet; i++){
-        cache = arrotvet.innerHTML;
-        for(var j = 0; j<arr; j++){
-            if(cache == arr[j].innerHTML){
-                skokotv = skokotv + 1
+             for(var i = 0; i<arrotvet.length; i++){
+        cache = arrotvet[i]
+        for(var j = 0; j<arr.length; j++){
+                        if(cache == arr[j]){
+                
+
+                               skokotv++
+               
                 console.log(skokotv)
                 if(skokotv == 3){
-                    open()
+                    ver = ver + 1
+                    skoko = skoko + 1
+                    if(skoko == 33){
+                        onel.classList.add('disabled')
+                        twol.classList.add('disabled')
+                        threel.classList.add('disabled')
+                        fourl.classList.add('disabled')
+                        fivel.classList.add('disabled')
+                        sixl.classList.add('disabled')
+                    } else {
+
+                            open()
+
+                    }
                 }
             }
             
@@ -332,14 +432,30 @@ function neskolko(e) {
         let arrotvet = [1, 2, 4]
         arr.push(e.target.id)
        
-             for(var i = 0; i<arrotvet; i++){
-        cache = arrotvet.innerHTML;
-        for(var j = 0; j<arr; j++){
-            if(cache == arr[j].innerHTML){
-                skokotv = skokotv + 1
+             for(var i = 0; i<arrotvet.length; i++){
+        cache = arrotvet[i]
+        for(var j = 0; j<arr.length; j++){
+                        if(cache == arr[j]){
+                
+                               skokotv++
+               
                 console.log(skokotv)
                 if(skokotv == 3){
-                    open()
+                    ver = ver + 1
+                    
+                    skoko = skoko + 1
+                    if(skoko == 33){
+                        onel.classList.add('disabled')
+                        twol.classList.add('disabled')
+                        threel.classList.add('disabled')
+                        fourl.classList.add('disabled')
+                        fivel.classList.add('disabled')
+                        sixl.classList.add('disabled')
+                    } else {
+
+                            open()
+
+                    }
                 }
             }
             
@@ -348,7 +464,7 @@ function neskolko(e) {
 
     }
 }
-}
+
 
 function verny(e) {
 
