@@ -1,10 +1,5 @@
 export const text = document.querySelector('.text')
-export const onel = document.querySelector('.onel')
-export const twol = document.querySelector('.twol')
-export const threel = document.querySelector('.threel')
-export const fourl = document.querySelector('.fourl')
-export const fivel = document.querySelector('.fivel')
-export const sixl = document.querySelector('.sixl')
+
 export const verl = document.querySelector('.ver')
 export const neverl = document.querySelector('.never')
 export const prav = document.querySelector('.prav')

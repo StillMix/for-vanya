@@ -4,8 +4,7 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
     document.getElementsByTagName('head')[0].innerHTML += '<link rel="stylesheet" href="style.css">'
 }
 
-import { initialCardsAlgor, text, onel, twol, threel, fourl,
-    fivel,sixl,verl,neverl,prav,btn,div,
+import { initialCardsAlgor, text, verl,neverl,prav,btn,div,
      } from './constant.js';
 let otvetik
 let otvetikl
@@ -19,9 +18,7 @@ let random = 0
       };
       const addCartBtns = Array.from(document.querySelectorAll('.add-to-cart'))
 function open(e) {
-    addCartBtns.map((i)=> {
-        i.classList.remove('disabled')
-   })
+    document.querySelector('.button__container').innerHTML = ""
     let a = shuffle(numPool);
     div.classList.remove('disabled')
      btn.classList.add('disabled')
@@ -31,41 +28,65 @@ function open(e) {
 
    a.splice(0, 1);
     initialCardsAlgor.map((i) => {
-        
+        addCartBtns.map((i)=> {
+            i.classList.remove('disabled')
+       })
         if (i.id == random) {
-
-            text.textContent = i.text;
-            onel.textContent = i.one;
-            twol.textContent = i.two;
-            if (i.three) {
-              
-                threel.textContent = i.three;
-            }else {
-                threel.classList.add('disabled')
-             }
-            if (i.four) {
-                fourl.textContent = i.four;
-            }else {
-                fourl.classList.add('disabled')
-             }
-
-            if (i.five) {
-                fivel.textContent = i.five;
+            text.textContent = i.text
+            if(i.one) {
+                let btn = document.createElement("button");
+                btn.className = "onel btn";
+                btn.innerHTML = i.one
+                btn.setAttribute("index", i);
+                document.querySelector('.button__container').appendChild(btn);
             }
-            else {
-                fivel.classList.add('disabled')
-             }
-            if (i.six) {
-                sixl.textContent = i.six;
-            } else {
-               sixl.classList.add('disabled')
+            if(i.two) {
+                let btn = document.createElement("button");
+                btn.className = "twol btn";
+                btn.innerHTML =i.two
+                btn.setAttribute("index", i);
+                document.querySelector('.button__container').appendChild(btn);
             }
-            
+            if(i.three) {
+                let btn = document.createElement("button");
+                btn.className = "threel btn";
+                btn.innerHTML = i.three
+                btn.setAttribute("index", i);
+                document.querySelector('.button__container').appendChild(btn);
+            }
+            if(i.four) {
+                let btn = document.createElement("button");
+                btn.className = "fourl btn";
+                btn.innerHTML = i.four
+                btn.setAttribute("index", i);
+                document.querySelector('.button__container').appendChild(btn);
+            }
+            if(i.five) {
+                let btn = document.createElement("button");
+                btn.className = "fivel btn";
+                btn.innerHTML = i.five
+                btn.setAttribute("index", i);
+                document.querySelector('.button__container').appendChild(btn);
+            }
+            if(i.six) {
+                let btn = document.createElement("button");
+                btn.className = "sixl btn";
+                btn.innerHTML = i.six
+                btn.setAttribute("index", i);
+                document.querySelector('.button__container').appendChild(btn);
+            }
+            const onel = document.querySelector('.onel')
+            const twol = document.querySelector('.twol')
+const threel = document.querySelector('.threel')
+const fourl = document.querySelector('.fourl')
+const fivel = document.querySelector('.fivel')
+const sixl = document.querySelector('.sixl')
             otvetikl= i.otvet
             if (i.otvet == "one") {
                 addCartBtns.map((i)=> {
                      i.addEventListener('click', (event) => {neverny(event)})
                 })
+
                 onel.addEventListener('click', (event) => {verny(event)})
 
                 otvetik = i.one
@@ -74,6 +95,7 @@ function open(e) {
                 addCartBtns.map((i)=> {
                     i.addEventListener('click', (event) => {neverny(event)})
                })
+               console.log(twol)
                 twol.addEventListener('click', (event) => {verny(event)})
                 otvetik = i.two
             }
