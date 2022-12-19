@@ -17,13 +17,12 @@ let random = 0
         return numPool;
       };
       const addCartBtns = Array.from(document.querySelectorAll('.add-to-cart'))
-function open(e) {
+function open() {
     document.querySelector('.button__container').innerHTML = ""
     let a = shuffle(numPool);
     div.classList.remove('disabled')
      btn.classList.add('disabled')
-     e.target.classList.remove('green')
-     e.target.classList.remove('red')
+
    random = a[0]
 
    a.splice(0, 1);
@@ -37,42 +36,48 @@ function open(e) {
                 let btn = document.createElement("button");
                 btn.className = "onel btn";
                 btn.innerHTML = i.one
-                btn.setAttribute("index", i);
+                btn.id = 1
+                
                 document.querySelector('.button__container').appendChild(btn);
             }
             if(i.two) {
                 let btn = document.createElement("button");
                 btn.className = "twol btn";
                 btn.innerHTML =i.two
-                btn.setAttribute("index", i);
+                btn.id = 2
+                
                 document.querySelector('.button__container').appendChild(btn);
             }
             if(i.three) {
                 let btn = document.createElement("button");
                 btn.className = "threel btn";
                 btn.innerHTML = i.three
-                btn.setAttribute("index", i);
+                btn.id = 3
+                
                 document.querySelector('.button__container').appendChild(btn);
             }
             if(i.four) {
                 let btn = document.createElement("button");
                 btn.className = "fourl btn";
                 btn.innerHTML = i.four
-                btn.setAttribute("index", i);
+                btn.id = 4
+                
                 document.querySelector('.button__container').appendChild(btn);
             }
             if(i.five) {
                 let btn = document.createElement("button");
                 btn.className = "fivel btn";
                 btn.innerHTML = i.five
-                btn.setAttribute("index", i);
+                btn.id = 5
+                
                 document.querySelector('.button__container').appendChild(btn);
             }
             if(i.six) {
                 let btn = document.createElement("button");
                 btn.className = "sixl btn";
                 btn.innerHTML = i.six
-                btn.setAttribute("index", i);
+                btn.id = 6
+                
                 document.querySelector('.button__container').appendChild(btn);
             }
             const onel = document.querySelector('.onel')
@@ -201,11 +206,149 @@ const sixl = document.querySelector('.sixl')
     })
 }
 let skoko = 0;
-
+let arr = []
 function neskolko(e) {
+    let skokotv = 0
     e.target.classList.add('green')
-}
+    if(otvetikl == "one and five") {
+        let arrotvet = [1, 5]
+     arr.push(e.target.id)
+     
+     for(var i = 0; i<arrotvet; i++){
+        cache = arrotvet.innerHTML;
+        for(var j = 0; j<arr; j++){
+            if(cache == arr[j].innerHTML){
+                skokotv = skokotv + 1
+                console.log(skokotv)
+                if(skokotv == 2){
+                    open()
+                }
+            }
+            
+         }
 
+     }
+    }
+    if(otvetikl == "two and five") {
+        let arrotvet = [2, 5]
+        arr.push(e.target.id)
+       
+        
+        for(var i = 0; i<arrotvet; i++){
+            cache = arrotvet.innerHTML;
+            for(var j = 0; j<arr; j++){
+                if(cache == arr[j].innerHTML){
+                    skokotv = skokotv + 1
+                    console.log(skokotv)
+                    if(skokotv == 2){
+                        open()
+                    }
+                }
+                
+             }
+            }
+
+    }
+    if(otvetikl == "one and three") {
+        let arrotvet = [1, 3]
+        arr.push(e.target.id)
+        
+       
+             for(var i = 0; i<arrotvet; i++){
+        cache = arrotvet.innerHTML;
+        for(var j = 0; j<arr; j++){
+            if(cache == arr[j].innerHTML){
+                skokotv = skokotv + 1
+                console.log(skokotv)
+                
+                if(skokotv == 2){
+                    open()
+                }
+            }
+        }
+         }
+
+    }
+    if(otvetikl == "three and four") {
+        let arrotvet = [3, 4]
+        arr.push(e.target.id)
+       
+        
+             for(var i = 0; i<arrotvet; i++){
+        cache = arrotvet.innerHTML;
+        for(var j = 0; j<arr; j++){
+            if(cache == arr[j].innerHTML){
+                skokotv = skokotv + 1
+                console.log(skokotv)
+                if(skokotv == 2){
+                    open()
+                }
+            }
+
+        }
+         }
+
+    }
+    if(otvetikl == "two and three") {
+        let arrotvet = [2, 3]
+        arr.push(e.target.id)
+        
+       
+             for(var i = 0; i<arrotvet; i++){
+        cache = arrotvet.innerHTML;
+        for(var j = 0; j<arr; j++){
+            if(cache == arr[j].innerHTML){
+                skokotv = skokotv + 1
+                console.log(skokotv)
+                if(skokotv == 2){
+                    open()
+                }
+            }
+            
+         }
+
+    }
+    if(otvetikl == "one and two and three") {
+        let arrotvet = [1, 2, 3]
+        arr.push(e.target.id)
+        
+       
+             for(var i = 0; i<arrotvet; i++){
+        cache = arrotvet.innerHTML;
+        for(var j = 0; j<arr; j++){
+            if(cache == arr[j].innerHTML){
+                skokotv = skokotv + 1
+                console.log(skokotv)
+                if(skokotv == 3){
+                    open()
+                }
+            }
+            
+         }
+        }
+
+    }
+    if(otvetikl == "one and two and four") {
+        let arrotvet = [1, 2, 4]
+        arr.push(e.target.id)
+       
+             for(var i = 0; i<arrotvet; i++){
+        cache = arrotvet.innerHTML;
+        for(var j = 0; j<arr; j++){
+            if(cache == arr[j].innerHTML){
+                skokotv = skokotv + 1
+                console.log(skokotv)
+                if(skokotv == 3){
+                    open()
+                }
+            }
+            
+         }
+        }
+
+    }
+}
+}
 
 function verny(e) {
 
@@ -236,7 +379,7 @@ function verny(e) {
         
         setTimeout(() => {
             e.target.classList.remove('green')
-            open(e)
+            open()
         }
             , 50)
     }
@@ -268,7 +411,7 @@ function neverny(e) {
 
         setTimeout(() => {
             e.target.classList.remove('red')
-            open(e)
+            open()
         }
             , 800)
     }
@@ -276,4 +419,4 @@ function neverny(e) {
 }
 
 btn.addEventListener('click', open)
-
+    
