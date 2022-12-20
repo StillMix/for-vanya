@@ -11,13 +11,13 @@ import {
 let ver = 0
 let never = 0
 let random = 0
-var numPool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90];
+var numPool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90]
 function shuffle(numPool) {
     for (var j, x, i = numPool.length; i; j = parseInt(Math.random() * i), x = numPool[--i], numPool[i] = numPool[j], numPool[j] = x);
     return numPool;
 };
 
-let cache
+
 let a = shuffle(numPool);
 let arr = []
 function open() {
@@ -39,6 +39,7 @@ function open() {
                 btn.className = "onel btn";
                 btn.innerHTML = i.one
                 btn.id = 1
+                btn.index = 1
                 btn.addEventListener('click', (event) => {
                     otvet(event, i.otvet)
                 })
@@ -49,6 +50,7 @@ function open() {
                 btn.className = "twol btn";
                 btn.innerHTML = i.two
                 btn.id = 2
+                btn.index = 2
                 btn.addEventListener('click', (event) => {
                     otvet(event, i.otvet)
                 })
@@ -59,6 +61,7 @@ function open() {
                 btn.className = "threel btn";
                 btn.innerHTML = i.three
                 btn.id = 3
+                btn.index = 3
                 btn.addEventListener('click', (event) => {
                     otvet(event, i.otvet)
                 })
@@ -69,6 +72,7 @@ function open() {
                 btn.className = "fourl btn";
                 btn.innerHTML = i.four
                 btn.id = 4
+                btn.index = 4
                 btn.addEventListener('click', (event) => {
                     otvet(event, i.otvet)
                 })
@@ -79,6 +83,7 @@ function open() {
                 btn.className = "fivel btn";
                 btn.innerHTML = i.five
                 btn.id = 5
+                btn.index = 5
                 btn.addEventListener('click', (event) => {
                     otvet(event, i.otvet)
                 })
@@ -89,6 +94,7 @@ function open() {
                 btn.className = "sixl btn";
                 btn.innerHTML = i.six
                 btn.id = 6
+                btn.index = 6
                 btn.addEventListener('click', (event) => {
                     otvet(event, i.otvet)
                 })
@@ -102,67 +108,83 @@ function open() {
 let skoko = 0;
 
 btn.addEventListener('click', open)
-
 function otvet(e, otvet) {
+    let cache
+    arr.push(e.target.index)
+    e.target.classList.add('green')
 
-    arr.push(e.target.id)
+    if(arr.length == otvet.length) {
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+        if (JSON.stringify(arr)==JSON.stringify(otvet) ) {
 
-        for (var i = 0; i < otvet.length; i++) {
-            cache = otvet[i]
-            for (var j = 0; j < arr.length; j++) {
-                document.getElementById(`${arr[j]}`).disabled = true;
-                if (cache == arr[j]) {
-
-                      document.getElementById(`${arr[j]}`).classList.add('green')
-                    if (otvet.length == arr.length) {
-                        
-                        ver = ver + 1
-                        verl.textContent = "правильных" + ' ' + ver
-
-                        skoko = skoko + 1
-                        if (skoko == 90) {
-                            a = shuffle(numPool);
-                        } else {
-
-                            setTimeout(open, 500)
-
-                        }
-                    }
-                } else {
-                    const addCartBtns = Array.from(document.querySelectorAll('.btn'))
-                    addCartBtns.map(( i )=> {
-                        i.disabled = true;
-                    })
-                    
-                    otvet.map(i => {
-                        document.getElementById(`${i}`).classList.add('green')
-                    })
-                    never = never + 1
-                    document.getElementById(`${arr[j]}`).classList.add('red')
-
-                    neverl.textContent =" не правильных" + ' ' + never 
-                    skoko = skoko + 1
-                    let btn = document.createElement("button");
-                    btn.className = "btn neprav";
-                    btn.innerHTML = "Далее"
-                    btn.addEventListener('click', neprav)
-                    document.querySelector('.button__container').appendChild(btn);
-
-
-                }
+            skoko = skoko + 1
+            if (skoko == 90) {
+                  text.textContent = 'dcc'
+            } else {
+                ver = ver + 1
+                verl.textContent = "правильных" + ' ' + ver
+                setTimeout(open, 500)
 
             }
+        }else {
+ const addCartBtns = Array.from(document.querySelectorAll('.btn'))
+    addCartBtns.map(( i )=> {
+      i.disabled = true;
+      i.classList.add('red')
+    })
+   
+   setTimeout(() => {
+     
+     otvet.map(i => {
+        document.getElementById(`${i}`).classList.remove('red')
+         document.getElementById(`${i}`).classList.add('green')
+
+     })
+     neverl.textContent =" не правильных" + ' ' + never 
+     skoko = skoko + 1
+     let btn = document.createElement("button");
+     btn.className = "btn neprav";
+     btn.innerHTML = "Далее"
+     btn.addEventListener('click', neprav)
+    document.querySelector('.button__container').appendChild(btn);
+    never = never + 1
+   } , 200)
         }
+ 
+    }
+
 
     
 }
 
+
 function neprav() {
     if (skoko == 90) {
-        a = shuffle(numPool);
+text.textContent = 'dcc'
     } else {
 
         open()
 
     }
 }
+
+
+    
+//    otvet.map(i => {
+//        document.getElementById(`${i}`).classList.add('green')
+//    })
+//    never = never + 1
+//    document.getElementById(`${otvet[j]}`).classList.add('red')
+
+//    neverl.textContent =" не правильных" + ' ' + never 
+//    skoko = skoko + 1
+ //   let btn = document.createElement("button");
+ //   btn.className = "btn neprav";
+ //   btn.innerHTML = "Далее"
+ //   btn.addEventListener('click', neprav)
+ //   document.querySelector('.button__container').appendChild(btn);
+
+
+//}
