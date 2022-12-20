@@ -5,13 +5,13 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 import {
-    initialCardsAlgor, text, verl, neverl, prav, btn, div, initialCards
+    initialCardsAlgor, text, verl, neverl, prav, btn, div, initialCards, issko
 } from './constant.js';
 
 let ver = 0
 let never = 0
 let random = 0
-var numPool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33];
+var numPool = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90];
 function shuffle(numPool) {
     for (var j, x, i = numPool.length; i; j = parseInt(Math.random() * i), x = numPool[--i], numPool[i] = numPool[j], numPool[j] = x);
     return numPool;
@@ -22,7 +22,7 @@ let a = shuffle(numPool);
 let arr = []
 function open() {
     arr = []
-
+     issko.textContent = skoko + "/" + initialCards.length 
     document.querySelector('.button__container').innerHTML = ""
 
     div.classList.remove('disabled')
@@ -119,13 +119,8 @@ function otvet(e, otvet) {
                         verl.textContent = "правильных" + ' ' + ver
 
                         skoko = skoko + 1
-                        if (skoko == 33) {
-                            onel.classList.add('disabled')
-                            twol.classList.add('disabled')
-                            threel.classList.add('disabled')
-                            fourl.classList.add('disabled')
-                            fivel.classList.add('disabled')
-                            sixl.classList.add('disabled')
+                        if (skoko == 90) {
+                            a = shuffle(numPool);
                         } else {
 
                             setTimeout(open, 500)
@@ -140,7 +135,14 @@ function otvet(e, otvet) {
                     document.getElementById(`${arr[j]}`).classList.add('red')
 
                     neverl.textContent =" не правильных" + ' ' + never 
-                    setTimeout(open, 500)
+                    skoko = skoko + 1
+                    if (skoko == 90) {
+                        a = shuffle(numPool);
+                    } else {
+
+                        setTimeout(open, 500)
+
+                    }
 
                 }
 

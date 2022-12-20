@@ -5,8 +5,7 @@ export const neverl = document.querySelector('.never')
 export const prav = document.querySelector('.prav')
 export const btn = document.querySelector('.start')
 export const div =document.querySelector('.div')
-
-
+export const issko = document.querySelector('.skoko')
 
 
 
@@ -538,8 +537,8 @@ export const initialCards = [
     id: 19,
         text: "Какая команда используется для создания папки из bat файла?",
                 one: "CHDIR",
-                two: "MKDIR",
-                three: "RMDIR",
+                two: "RMDIR",
+                three: "MKDIR",
                 four: "DIR/P",
                 
             otvet: [ 3 ],

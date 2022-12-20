@@ -99,3 +99,12 @@ transform: translate(-50%, 0);
 .red{
     background:red;
 }
+
+.skoko{
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+}

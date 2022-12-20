@@ -58,7 +58,7 @@ transform: translate(-50%, 0);
     font-style: normal;
     font-weight: normal;
     font-size: 50px;
-    line-height: 40px;
+    line-height: 50px;
     text-align: center;
 }
 
@@ -127,4 +127,13 @@ transform: translate(-50%, 0);
 }
 .red{
     background:red;
+}
+
+.skoko{
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 40px;
+    text-align: center; 
 }
