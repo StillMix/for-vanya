@@ -110,8 +110,9 @@ function otvet(e, otvet) {
         for (var i = 0; i < otvet.length; i++) {
             cache = otvet[i]
             for (var j = 0; j < arr.length; j++) {
+                document.getElementById(`${arr[j]}`).disabled = true;
                 if (cache == arr[j]) {
-                      document.getElementById(`${arr[j]}`).disabled = true;
+
                       document.getElementById(`${arr[j]}`).classList.add('green')
                     if (otvet.length == arr.length) {
                         
@@ -128,6 +129,11 @@ function otvet(e, otvet) {
                         }
                     }
                 } else {
+                    const addCartBtns = Array.from(document.querySelectorAll('.btn'))
+                    addCartBtns.map(( i )=> {
+                        i.disabled = true;
+                    })
+                    
                     otvet.map(i => {
                         document.getElementById(`${i}`).classList.add('green')
                     })
