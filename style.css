@@ -1,143 +1,173 @@
-.popup{
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
+.popup {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
 }
 .disabled {
-    width: 0px;
-    height: 0px;
-    opacity: 0;
-    visibility: hidden;
-    display: block;
- }
+  width: 0px;
+  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  display: block;
+}
 
-.start{
-    cursor: pointer;
-    background: #000000;
-    border-radius: 2px;
-    width: 358px;
-    height: 50px;
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
+.start {
+  cursor: pointer;
+  background: #000000;
+  border-radius: 2px;
+  width: 358px;
+  height: 50px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 
-    display: block;
-    position: relative;
-left: 50%;
-transform: translate(-50%, 0);
+  display: block;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
 
-    outline: none;
-    border: none;
-    color: #FFFFFF;
-    -ms-user-select: none;
-            -moz-user-select: none;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  -ms-user-select: none;
+  -moz-user-select: none;
 
-            /**
+  /**
              * Для конкверора
              */
-            -khtml-user-select: none;
+  -khtml-user-select: none;
 
-            /**
+  /**
              * Для Сафари и Хрома
              */
-            -webkit-user-select: none;
+  -webkit-user-select: none;
 }
 
 .start:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
-
-.text{
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
+.text {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 }
 
-.btn{
-    display: block;
-    cursor: pointer;
-    background: #542fd8;
-    border-radius: 2px;
-    width: 358px;
-    height: 50px;
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    margin-top: 10px;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
-    outline: none;
-    border: none;
-    color: #FFFFFF;
-    -ms-user-select: none;
-            -moz-user-select: none;
+.btn {
+  display: block;
+  cursor: pointer;
+  background: #542fd8;
+  border-radius: 2px;
+  width: 358px;
+  height: 50px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  -ms-user-select: none;
+  -moz-user-select: none;
 
-            /**
+  /**
              * Для конкверора
              */
-            -khtml-user-select: none;
+  -khtml-user-select: none;
 
-            /**
+  /**
              * Для Сафари и Хрома
              */
-            -webkit-user-select: none; 
+  -webkit-user-select: none;
 }
 
-.green{
-    background: green;
+.green {
+  background: green;
 }
-.red{
-    background:red;
+.red {
+  background: red;
 }
-
-.skoko{
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
+.orange {
+  background: orange;
 }
-
-.ver{
-    color: green;
-    font-size: 40px;
-    line-height: 22px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
+.postgreen {
+  background: rgb(2, 105, 2);
+}
+.skoko {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 }
 
-.never{
-    color: red;
-    font-size: 40px;
-    line-height: 22px;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
+.ver {
+  color: green;
+  font-size: 40px;
+  line-height: 22px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.prav{
-    font-family: "Inter", "Arial", sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center; 
+.never {
+  color: red;
+  font-size: 40px;
+  line-height: 22px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.neprav{
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
+.prav {
+  font-family: "Inter", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.neprav {
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vas {
+  font-size: 60px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.ocenka {
+  font-size: 110px;
+  line-height: 40px;
+  text-align: center;
+}
+
+
+.greenl {
+  color: green;
+}
+.redl {
+  color: red;
+}
+.orangel {
+  color: orange;
+}
+.postgreenl {
+  color: rgb(2, 105, 2);
 }

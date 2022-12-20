@@ -109,10 +109,10 @@ let skoko = 0;
 
 btn.addEventListener('click', open)
 function otvet(e, otvet) {
-    let cache
+
     arr.push(e.target.index)
     e.target.classList.add('green')
-
+    e.target.disabled = true
     if(arr.length == otvet.length) {
         arr.sort(function (a, b) {
             return a - b;
@@ -121,7 +121,7 @@ function otvet(e, otvet) {
 
             skoko = skoko + 1
             if (skoko == 90) {
-                  text.textContent = 'dcc'
+                vse()
             } else {
                 ver = ver + 1
                 verl.textContent = "правильных" + ' ' + ver
@@ -162,7 +162,7 @@ function otvet(e, otvet) {
 
 function neprav() {
     if (skoko == 90) {
-text.textContent = 'dcc'
+     vse()
     } else {
 
         open()
@@ -172,19 +172,25 @@ text.textContent = 'dcc'
 
 
     
-//    otvet.map(i => {
-//        document.getElementById(`${i}`).classList.add('green')
-//    })
-//    never = never + 1
-//    document.getElementById(`${otvet[j]}`).classList.add('red')
+function vse() {
 
-//    neverl.textContent =" не правильных" + ' ' + never 
-//    skoko = skoko + 1
- //   let btn = document.createElement("button");
- //   btn.className = "btn neprav";
- //   btn.innerHTML = "Далее"
- //   btn.addEventListener('click', neprav)
- //   document.querySelector('.button__container').appendChild(btn);
-
-
-//}
+    const ochenka = document.querySelector('.ocenka')
+    document.querySelector('.itog').classList.remove('disabled')
+    div.classList.add('disabled')
+    if(ver<45) {
+        ochenka.textContent = '2'
+        ochenka.classList.add('redl')
+    }
+    if(ver>45) {
+        ochenka.textContent = '3'
+        ochenka.classList.add('orangel')
+    }
+    if(ver>75) {
+        ochenka.textContent = '4'
+        ochenka.classList.add('postgreenl')
+    }
+    if(ver> 84) {
+        ochenka.textContent = '5'
+        ochenka.classList.add('greenl')
+    }
+}

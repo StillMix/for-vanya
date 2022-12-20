@@ -129,6 +129,13 @@ transform: translate(-50%, 0);
     background:red;
 }
 
+.orange{
+    background: orange;
+}
+.postgreen{
+    background: rgb(2, 105, 2);
+}
+
 .skoko{
     font-family: "Inter", "Arial", sans-serif;
     font-style: normal;
@@ -144,3 +151,29 @@ transform: translate(-50%, 0);
     margin-left: auto;
     margin-right: auto;
 }
+
+.vas {
+    font-size: 110px;
+    line-height: 40px;
+    text-align: center;
+  }
+  
+  .ocenka {
+    font-size: 260px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  
+.greenl {
+    color: green;
+  }
+  .redl {
+    color: red;
+  }
+  .orangel {
+    color: orange;
+  }
+  .postgreenl {
+    color: rgb(2, 105, 2);
+  }
