@@ -136,13 +136,12 @@ function otvet(e, otvet) {
 
                     neverl.textContent =" не правильных" + ' ' + never 
                     skoko = skoko + 1
-                    if (skoko == 90) {
-                        a = shuffle(numPool);
-                    } else {
+                    let btn = document.createElement("button");
+                    btn.className = "btn neprav";
+                    btn.innerHTML = "Далее"
+                    btn.addEventListener('click', neprav)
+                    document.querySelector('.button__container').appendChild(btn);
 
-                        setTimeout(open, 500)
-
-                    }
 
                 }
 
@@ -150,4 +149,14 @@ function otvet(e, otvet) {
         }
 
     
+}
+
+function neprav() {
+    if (skoko == 90) {
+        a = shuffle(numPool);
+    } else {
+
+        open()
+
+    }
 }

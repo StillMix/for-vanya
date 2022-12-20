@@ -108,3 +108,36 @@ transform: translate(-50%, 0);
     line-height: 22px;
     text-align: center;
 }
+
+.ver{
+    color: green;
+    font-size: 40px;
+    line-height: 22px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.never{
+    color: red;
+    font-size: 40px;
+    line-height: 22px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.prav{
+    font-family: "Inter", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center; 
+}
+
+.neprav{
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
