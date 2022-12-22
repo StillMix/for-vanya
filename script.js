@@ -145,6 +145,11 @@ function otvet(e, otvet) {
     e.target.classList.add('green')
     e.target.disabled = true
     if(arr.length == otvet.length) {
+        const addCartBtns = Array.from(document.querySelectorAll('.btn'))
+        addCartBtns.map(( i )=> {
+          i.disabled = true;
+          i.classList.add('red')
+        })
         arr.sort(function (a, b) {
             return a - b;
         });
@@ -156,15 +161,14 @@ function otvet(e, otvet) {
             } else {
                 ver = ver + 1
                 verl.textContent = "правильных" + ' ' + ver
-                setTimeout(open, 500)
+                let btn = document.createElement("button");
+                btn.className = "btn neprav";
+                btn.innerHTML = "Далее"
+                btn.addEventListener('click', neprav)
+               document.querySelector('.button__container').appendChild(btn);
 
             }
         }else {
- const addCartBtns = Array.from(document.querySelectorAll('.btn'))
-    addCartBtns.map(( i )=> {
-      i.disabled = true;
-      i.classList.add('red')
-    })
    
    setTimeout(() => {
      

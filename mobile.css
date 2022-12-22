@@ -68,7 +68,8 @@ transform: translate(-50%, 0);
     background: #542fd8;
     border-radius: 2px;
     width: 80%;
-    min-height: 100px;
+
+    min-height: 130px;
     font-family: "Inter", "Arial", sans-serif;
     font-style: normal;
     font-weight: normal;
