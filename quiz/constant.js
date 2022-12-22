@@ -12,7 +12,6 @@ export const issko = document.querySelector('.skoko')
 
 
 
-
 export const initialCardsAlgor = [
     {
         id: 1,
@@ -1275,7 +1274,7 @@ export const initialCards = [
                 three: "Программные псевдопрерывания",
                 four: "Системные прерывания",
                 
-            otvet: [ 1 , 3],
+            otvet: [ 1 ,2, 3],
     }
     ,
     {
