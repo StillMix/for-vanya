@@ -21,6 +21,7 @@ function shuffle(numPool) {
 let a = shuffle(numPool);
 let arr = []
 let isskol = 0
+let otvetaa
 function open() {
     isskol = isskol + 1
     arr = []
@@ -34,7 +35,7 @@ function open() {
         for (var j, x, i = otveto.length; i; j = parseInt(Math.random() * i), x = otveto[--i], otveto[i] = otveto[j], otveto[j] = x);
         return otveto;
     };
-    let b = shuffle(otveto);
+    let b = otvetodd(otveto);
 
     random = a[0]
 
@@ -42,6 +43,7 @@ function open() {
     initialCards.map((i) => {
 
         if (i.id == random) {
+            otvetaa = i.otvet
             text.textContent = i.text
             b.map(b => {
 
@@ -52,6 +54,7 @@ function open() {
                         btn.innerHTML = i.one
                         btn.id = 1
                         btn.index = 1
+                        btn.clas = 0
                         btn.addEventListener('click', (event) => {
                             otvet(event, i.otvet)
                         })
@@ -66,6 +69,7 @@ function open() {
                         btn.innerHTML = i.two
                         btn.id = 2
                         btn.index = 2
+                        btn.clas = 0
                         btn.addEventListener('click', (event) => {
                             otvet(event, i.otvet)
                         })
@@ -80,6 +84,7 @@ function open() {
                         btn.innerHTML = i.three
                         btn.id = 3
                         btn.index = 3
+                        btn.clas = 0
                         btn.addEventListener('click', (event) => {
                             otvet(event, i.otvet)
                         })
@@ -94,6 +99,7 @@ function open() {
                         btn.innerHTML = i.four
                         btn.id = 4
                         btn.index = 4
+                        btn.clas = 0
                         btn.addEventListener('click', (event) => {
                             otvet(event, i.otvet)
                         })
@@ -108,6 +114,7 @@ function open() {
                         btn.innerHTML = i.five
                         btn.id = 5
                         btn.index = 5
+                        btn.clas = 0
                         btn.addEventListener('click', (event) => {
                             otvet(event, i.otvet)
                         })
@@ -122,6 +129,7 @@ function open() {
                         btn.innerHTML = i.six
                         btn.id = 6
                         btn.index = 6
+                        btn.clas = 0
                         btn.addEventListener('click', (event) => {
                             otvet(event, i.otvet)
                         })
@@ -129,75 +137,53 @@ function open() {
                     }
 
                 }
+                
             })
 
 
         }
 
     })
+    let btn = document.createElement("button");
+        btn.className = "btn neprav";
+        btn.innerHTML = "Далее"
+        btn.addEventListener('click',  neprav)
+        document.querySelector('.button__container').appendChild(btn);
 }
 let skoko = 0;
 
 function otvet(e, otvet) {
 
-    arr.push(e.target.index)
-    e.target.classList.add('green')
-    e.target.disabled = true
-    if (arr.length == otvet.length) {
-        const addCartBtns = Array.from(document.querySelectorAll('.btn'))
-
-        arr.sort(function (a, b) {
-            return a - b;
-        });
-        if (JSON.stringify(arr) == JSON.stringify(otvet)) {
-            addCartBtns.map((i) => {
-                i.disabled = true;
-            })
-            skoko = skoko + 1
-            if (skoko == 90) {
-                vse()
-            } else {
-                ver = ver + 1
-                verl.textContent = "правильных" + ' ' + ver
-                let btn = document.createElement("button");
-                btn.className = "btn neprav";
-                btn.innerHTML = "Далее"
-                btn.addEventListener('click', neprav)
-                document.querySelector('.button__container').appendChild(btn);
-
-            }
-        } else {
-            addCartBtns.map((i) => {
-                i.disabled = true;
-                i.classList.add('red')
-            })
-            setTimeout(() => {
-
-                otvet.map(i => {
-                    document.getElementById(`${i}`).classList.remove('red')
-                    document.getElementById(`${i}`).classList.add('green')
-
-                })
-
-                skoko = skoko + 1
-                let btn = document.createElement("button");
-                btn.className = "btn neprav";
-                btn.innerHTML = "Далее"
-                btn.addEventListener('click', neprav)
-                document.querySelector('.button__container').appendChild(btn);
-                never = never + 1
-                neverl.textContent = " не правильных" + ' ' + never
-            }, 200)
-        }
-
+     
+    if(e.target.clas == 0) {
+        e.target.classList.add('green')
+        arr.push(e.target.index)
+        e.target.clas = 1
+    }else {
+        e.target.classList.remove('green')
+        arr = arr.filter((item) => {return item != e.target.index})
+        e.target.clas = 0
     }
-
 
 
 }
 
+    
 
 function neprav() {
+    arr.sort(function (a, b) {
+        return a - b;
+    });
+    if (JSON.stringify(arr) == JSON.stringify(otvetaa)) {
+        skoko = skoko + 1
+            ver = ver + 1    
+    } else {
+    
+            skoko = skoko + 1
+            never = never + 1
+    }
+    
+    
     if (skoko == 90) {
         vse()
     } else {
@@ -230,6 +216,8 @@ function vse() {
         ochenka.textContent = '5'
         ochenka.classList.add('greenl')
     }
+    neverl.textContent = " не правильных" + ' ' + never
+    verl.textContent = "правильных" + ' ' + ver
 }
 
 

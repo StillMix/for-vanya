@@ -34,7 +34,7 @@ function open() {
         for (var j, x, i = otveto.length; i; j = parseInt(Math.random() * i), x = otveto[--i], otveto[i] = otveto[j], otveto[j] = x);
         return otveto;
     };
-    let b = shuffle(otveto);
+    let b = otvetodd(otveto);
 
     random = a[0]
 
