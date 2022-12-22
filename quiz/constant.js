@@ -3,7 +3,7 @@ export const text = document.querySelector('.text')
 export const verl = document.querySelector('.ver')
 export const neverl = document.querySelector('.never')
 export const prav = document.querySelector('.prav')
-export const btn = document.querySelector('.start')
+
 export const div =document.querySelector('.div')
 export const issko = document.querySelector('.skoko')
 
