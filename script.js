@@ -20,10 +20,11 @@ function shuffle(numPool) {
 
 let a = shuffle(numPool);
 let arr = []
+let isskol = 0
 function open() {
-
+    isskol = isskol + 1
     arr = []
-     issko.textContent = skoko + "/" + initialCards.length 
+     issko.textContent = isskol + "/" + initialCards.length 
     document.querySelector('.button__container').innerHTML = ""
 
     div.classList.remove('disabled')
@@ -172,7 +173,7 @@ function otvet(e, otvet) {
          document.getElementById(`${i}`).classList.add('green')
 
      })
-     neverl.textContent =" не правильных" + ' ' + never 
+
      skoko = skoko + 1
      let btn = document.createElement("button");
      btn.className = "btn neprav";
@@ -180,6 +181,7 @@ function otvet(e, otvet) {
      btn.addEventListener('click', neprav)
     document.querySelector('.button__container').appendChild(btn);
     never = never + 1
+    neverl.textContent =" не правильных" + ' ' + never 
    } , 200)
         }
  
@@ -224,3 +226,5 @@ function vse() {
         ochenka.classList.add('greenl')
     }
 }
+
+
