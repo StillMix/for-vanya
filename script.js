@@ -146,15 +146,14 @@ function otvet(e, otvet) {
     e.target.disabled = true
     if(arr.length == otvet.length) {
         const addCartBtns = Array.from(document.querySelectorAll('.btn'))
-        addCartBtns.map(( i )=> {
-          i.disabled = true;
-          i.classList.add('red')
-        })
+
         arr.sort(function (a, b) {
             return a - b;
         });
         if (JSON.stringify(arr)==JSON.stringify(otvet) ) {
-
+            addCartBtns.map(( i )=> {
+                i.disabled = true;
+              })
             skoko = skoko + 1
             if (skoko == 90) {
                 vse()
@@ -169,7 +168,10 @@ function otvet(e, otvet) {
 
             }
         }else {
-   
+            addCartBtns.map(( i )=> {
+                i.disabled = true;
+                i.classList.add('red')
+              })
    setTimeout(() => {
      
      otvet.map(i => {
