@@ -25,7 +25,7 @@ let otvetaa
 function open() {
     isskol = isskol + 1
     arr = []
-    issko.textContent = isskol + "/" + initialCards.length
+    issko.textContent = isskol + "/" + initialCardsAlgor.length
     document.querySelector('.button__container').innerHTML = ""
 
     div.classList.remove('disabled')
@@ -40,7 +40,7 @@ function open() {
     random = a[0]
 
     a.splice(0, 1);
-    initialCards.map((i) => {
+    initialCardsAlgor.map((i) => {
 
         if (i.id == random) {
             otvetaa = i.otvet

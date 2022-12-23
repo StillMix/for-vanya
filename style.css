@@ -189,13 +189,15 @@ body {
    height: 100%;
    margin: 0;
    padding: 0;
-   overflow: hidden;
+
    font-size: 16px;
    font-family: helvetica, arial;
    background: #f9f9f9;
    color: #111;
 }
- 
+ .body{
+  overflow: hidden;
+ }
 .wrapper
 {
    width: 100%;
