@@ -70,7 +70,7 @@ export const initialCardsAlgor = [
         three: "(b != 5 || a == 3) || (!some && a > 1)",
         four: "some || a == 4 || b < 3",
         five: '(b > 5 && a <= 3) || (!some || a < 1)',
-        otvet: "five"
+        otvet: [ 5 ]
     },
     {
         id: 7,
@@ -160,7 +160,7 @@ export const initialCardsAlgor = [
         three: "ошибку в коде", 
         four: "01",
         five: '12', 
-        otvet: "five"
+        otvet: [ 5 ]
     },
     {
         id: 14,
