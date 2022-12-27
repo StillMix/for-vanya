@@ -214,19 +214,19 @@ function vse() {
     const ochenka = document.querySelector('.ocenka')
     document.querySelector('.itog').classList.remove('disabled')
     div.classList.add('disabled')
-    if (ver < 45) {
+    if (ver < 17) {
         ochenka.textContent = '2'
         ochenka.classList.add('redl')
     }
-    if (ver > 45) {
+    if (ver > 17) {
         ochenka.textContent = '3'
         ochenka.classList.add('orangel')
     }
-    if (ver > 75) {
+    if (ver > 27) {
         ochenka.textContent = '4'
         ochenka.classList.add('postgreenl')
     }
-    if (ver > 84) {
+    if (ver > 31) {
         ochenka.textContent = '5'
         ochenka.classList.add('greenl')
     }
