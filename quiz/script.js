@@ -154,7 +154,7 @@ function otvet(e, otvet) {
                 i.disabled = true;
             })
             skoko = skoko + 1
-            if (skoko == 90) {
+            if (skoko == 33) {
                 vse()
             } else {
                 ver = ver + 1
@@ -198,7 +198,7 @@ function otvet(e, otvet) {
 
 
 function neprav() {
-    if (skoko == 90) {
+    if (skoko == 33) {
         vse()
     } else {
 

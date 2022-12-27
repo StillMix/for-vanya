@@ -184,7 +184,7 @@ function neprav() {
     }
     
     
-    if (skoko == 90) {
+    if (skoko == 33) {
         vse()
     } else {
 
