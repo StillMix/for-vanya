@@ -196,7 +196,7 @@ function neprav() {
 
 
 function vse() {
-
+    console.log(ver)
     const ochenka = document.querySelector('.ocenka')
     document.querySelector('.itog').classList.remove('disabled')
     div.classList.add('disabled')

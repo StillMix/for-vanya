@@ -155,6 +155,7 @@ function otvet(e, otvet) {
             })
             skoko = skoko + 1
             if (skoko == 33) {
+                ver = ver + 1
                 vse()
             } else {
                 ver = ver + 1
@@ -183,9 +184,10 @@ function otvet(e, otvet) {
                 let btn = document.createElement("button");
                 btn.className = "btn neprav";
                 btn.innerHTML = "Далее"
+                never = never + 1
                 btn.addEventListener('click', neprav)
                 document.querySelector('.button__container').appendChild(btn);
-                never = never + 1
+                
                 neverl.textContent = " не правильных" + ' ' + never
             }, 200)
         }
@@ -210,7 +212,7 @@ function neprav() {
 
 
 function vse() {
-
+    console.log(ver)
     const ochenka = document.querySelector('.ocenka')
     document.querySelector('.itog').classList.remove('disabled')
     div.classList.add('disabled')
