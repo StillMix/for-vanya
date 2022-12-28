@@ -63,7 +63,9 @@ export const initialCardsAlgor = [
     },
     {
         id: 6,
-        text: 'При каком условии результат будет равен значению true?',
+        text: `При каком условии результат будет равен значению true?
+        int a =1, b = 5;
+        bool some = false`,
         one: '(some && a != 2) || b > 5',
         two: '(b <= 5 || a == 3) && some',
         three: "(b != 5 || a == 3) || (!some && a > 1)",
