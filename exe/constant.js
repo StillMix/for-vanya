@@ -259,7 +259,7 @@ export const initialCardsAlgor = [
         four: "==", 
         five: '&&',
         six: '^', 
-        otvet: [ 1, 2 , 3]
+        otvet: [ 1, 2 , 4]
     },
     {
         id: 25,
